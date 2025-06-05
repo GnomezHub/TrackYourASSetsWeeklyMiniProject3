@@ -31,12 +31,13 @@ namespace WeeklyMiniProject3
             {
                 Console.ResetColor();
                 Console.BackgroundColor = ConsoleColor.DarkGray;
-                // If the asset was purchased more than 3.5 years ago, the color is red
+
+                //       * Items *RED* if date less than 3 months away from 3 years
                 if (asset.PurchaseDate <= DateTime.Now.AddYears(-3).AddMonths(+3))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                 }
-                // If the asset was purchased between 3 and 3.5 years ago, the color is yellow
+                // * Items *Yellow* if date less than 6 months away from 3 years
                 else if (asset.PurchaseDate <= DateTime.Now.AddYears(-3).AddMonths(+6))
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
