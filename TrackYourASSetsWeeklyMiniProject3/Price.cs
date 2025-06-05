@@ -16,8 +16,6 @@ namespace WeeklyMiniProject3
             LocalCurrency = currency.ToString();// Convert the Currency enum to string for easier handling
         }
 
-        //double Convert(double input, string fromCurrency, string toCurrency) // Method in LiveCurrency that uses the fetched rates to convert between the given rates via Euro
-
         private double Value; // The value of the asset in the local currency
       
         private string LocalCurrency; // The local currency of the asset, e.g. USD, EUR, SEK

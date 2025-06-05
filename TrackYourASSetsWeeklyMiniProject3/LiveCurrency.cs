@@ -27,13 +27,14 @@ namespace WeeklyMiniProject3
                     {
                         if (reader.Name == "currency") // Identifies each currency attribute and saves the currency code and rate as an object
                         {
-                            string currencyCode = reader.Value;
+                            string currencyCode = reader.Value; 
 
                             reader.MoveToNextAttribute();
                             //double rate = double.Parse(reader.Value);
                             double rate = double.Parse(reader.Value, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
 
                             currencyList.Add(new CurrencyObj(currencyCode, rate));
+
                         }
                     }
                 }
@@ -63,6 +64,7 @@ namespace WeeklyMiniProject3
         }
     }
 
+    // Represents a currency object with its code and exchange rate from Euro
     public struct CurrencyObj
     {
         public CurrencyObj(string currencyCode, double rate)
@@ -70,7 +72,6 @@ namespace WeeklyMiniProject3
             CurrencyCode = currencyCode;
             ExchangeRateFromEUR = rate;
         }
-
         public string CurrencyCode { get; }
         public double ExchangeRateFromEUR { get; }
     }
